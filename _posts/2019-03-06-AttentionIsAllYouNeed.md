@@ -32,3 +32,7 @@ Transformer는 sequence-aligned RNN과 convolution을 사용하지 않고, input
 **Encoder**: encoder는 N = 6개의 같은 구조의 layer가 쌓인 형태로 이루어져 있다. 각각의 layer에는 2개의 sub-layer가 존재한다. 첫번째 layer는 attention을 위한 layer이고 두번째 layer는 간단한 fully connecte d feed-forward network이다. Encoder를 통해 생성되는 output의 dimension $d_model$ = 512이다. $\begin{equation} ... \end{equation}$
 $$s_2$$ $ 111 $  
 asd
+$$
+K(a,b) = \int \mathcal{D}x(t) \exp(2\pi i S[x]/\hbar)
+$$
+
