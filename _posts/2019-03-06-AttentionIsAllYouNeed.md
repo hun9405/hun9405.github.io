@@ -62,6 +62,7 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 지금까지 살펴본 Attention Layer의 성질을 가지고 Transformer가 작동하는 과정을 살펴보자. 먼저 Encoder의 경우부터 아래의 그림에서 살펴보자.(잘못되었을 가능성 있음)
 
+<img src="/images/Encoder.png" />
 
 
 
