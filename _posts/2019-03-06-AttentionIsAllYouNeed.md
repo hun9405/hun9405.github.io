@@ -76,6 +76,7 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 ### Decoder
 
+이제 Encoder의 output을 Decoder의 input으로 하여 출력값을 얻어내는 과정에 대하여 
 
 
 
