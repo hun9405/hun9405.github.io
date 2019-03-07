@@ -24,3 +24,9 @@ Attention mechanism 들은 input과 output sequence에서 그들의 거리와 �
 Intra-attention이라고도 불리는 self-attention은 하나의 sequence의 representation을 계산하기 위해 sequence내의 다른 위치에 있는 것들과 계산하는 것이다. Self-attention은 reading comprehension, abstractive summarization, textual entailment 등과 같은 task에서 좋은 성능을 얻어내고 있다.
 
 Transformer는 sequence-aligned RNN과 convolution을 사용하지 않고, input과 output의 representation을 계산하기 위해 self-attention 만을 사용한 최초의 transduction(변환) 모델이다.
+
+## Model Architecture
+
+이제 **Transformer**의 구조에 대해 알아보자. Transformer도 기본적으로 Encoder가 input sequence를 받아 representation을 만들고, 이것을 통해 decoder가 output sequence를 생성해내는 구조를 가지고 있다. 먼저 Encoder의 구조를 살펴보자.
+
+**Encoder**: encoder는 N = 6개의 같은 구조의 layer가 쌓인 형태로 이루어져 있다. 각각의 layer에는 2개의 sub-layer가 존재한다. 첫번째 layer는 attention을 위한 layer이고 두번째 layer는 간단한 fully connected feed-forward network이다. Encoder를 통해 생성되는 output의 dimension d_model = 512이다.
