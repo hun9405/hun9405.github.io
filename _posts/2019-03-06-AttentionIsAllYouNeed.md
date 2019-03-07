@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Attention Is All You Need review
+use_math: true
 ---
 
 ## Abstract
