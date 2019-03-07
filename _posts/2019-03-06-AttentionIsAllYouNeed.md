@@ -60,11 +60,20 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 논문에서는 sine cosine함수를 사용한 positional embedding을 사용하였다.
 
+###
+
+
 지금까지 살펴본 Attention Layer의 성질을 가지고 Transformer가 작동하는 과정을 살펴보자. 먼저 Encoder의 경우부터 아래의 그림에서 살펴보자.(잘못되었을 가능성 있음)
 
 <img src="/images/Encoder.png" />
 
-먼저 Transformer input으로 N개의 word가 embedding 되어져 있는 matrix X를 갖게된다. 이 matrix X에 각각의 word의 position을 고려할 수 있도록 해주는 Positional Encoding vector(여기선 matrix)를 더하여, Encoder에 들어갈 matrix를 얻게 된다. 이렇게 input으로 주어지는 Matrix는 위의 Multi-Head Attention Layer Section에서 보았듯이 Query, Key, Value 로 나누어지게 되어, Multi-Head Attention Layer를 통과하게 된다. 이때 통과되어 나온 output은 Layer를 통과하기 전의 matrix와 더해진 후, Normalize를 해주게 된다. 이는 수식으로는 _Norm(x + Multi-Head Attention(x))_ 와 같이 나타내어진다.
+먼저 Transformer input으로 N개의 word가 embedding 되어져 있는 matrix X를 갖게된다. 이 matrix X에 각각의 word의 position을 고려할 수 있도록 해주는 Positional Encoding vector(여기선 matrix)를 더하여, Encoder에 들어갈 matrix를 얻게 된다. 이렇게 input으로 주어지는 Matrix는 위의 Multi-Head Attention Layer Section에서 보았듯이 Query, Key, Value 로 나누어지게 되어, Multi-Head Attention Layer를 통과하게 된다. 이때 통과되어 나온 output은 Layer를 통과하기 전의 matrix와 더해진 후, Normalize를 해주게 된다. 이는 수식으로는 _Norm(x + Multi-Head Attention(x))_ 와 같이 나타내어진다. 
+
+다음으로, 이 output을 Feed Forward Layer의 input으로 준 후, 다시 더하여 normalize하는 과정을 거치면, Encoder의 output을 구하게 되고, 이 output은 당연하게도 Encoder input의 dimension이 같다.
+
+이렇게 Encoder를 통과하는 과정(Encoding)을 N번(Encoder의 갯수) 반복하면, 최종적인 Encoder의 output을 구할 수 있게 된다.
+
+
 
 
 
