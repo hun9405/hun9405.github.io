@@ -58,8 +58,10 @@ D_k 값이 작다면 두 attention mechanism은 비슷한 성능을 보이지만
 
 Transformer에서는 multi-head attention을 세가지 방법으로 사용하고 있다.
 
-* 
+*	Encoder-decoder attention layer에서 query들은 이전의 decoder layer로부터 들어오고, memory key와 value들은 encoder의 output으로부터 들어오게 된다. 이를 통해서 decoder의 모든 position이 input sequence의 모든 position을 attend 할 수 있게 된다. 이것은 전형적인 seq2seq 의 attention mechanism과 같다.
 
+*	Encoder는 self-attention layer를 가지고 있다. Self-attention layer의 모든 key, value, query들은 이전 layer의 output이다. Encoder의 각각의 position은 이전 layer encoder의 모든 position을 attend 할 수 있다.
 
+* 비슷하게 decoder의 self-attention layer은 decoder의 각각의 position에서 그 position을 포함한 이전 모든 position을 attend 할 수 있게 한다. 이때 우리는 decoder 에서 auto-regressive property를 유지해야 하기 때문에 leftward information flow를 막아야 한다. 이것을 scaled dot-product attention에서 부적절한 connection 들에 대해 softmax의 input 을 masking(-무한대)로 하는 것으로 구현해주었다.
 
 
