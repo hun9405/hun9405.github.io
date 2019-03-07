@@ -64,6 +64,8 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 <img src="/images/Encoder.png" />
 
+먼저 Transformer input으로 N개의 word가 embedding 되어져 있는 matrix X를 갖게된다. 이 matrix X에 각각의 word의 position을 고려할 수 있도록 해주는 Positional Encoding vector(여기선 matrix)를 더하여, Encoder에 들어갈 matrix를 얻게 된다. 이렇게 input으로 주어지는 Matrix는 위의 Multi-Head Attention Layer Section에서 보았듯이 Query, Key, Value 로 나누어지게 되어, Multi-Head Attention Layer를 통과하게 된다. 이때 통과되어 나온 output은 Layer를 통과하기 전의 matrix와 더해진 후, Normalize를 해주게 된다. 이는 수식으로는 _Norm(x + Multi-Head Attention(x))_ 와 같이 나타내어진다.
+
 
 
 **Applications of Attention in Transformer**
