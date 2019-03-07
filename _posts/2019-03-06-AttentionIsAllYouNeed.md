@@ -56,9 +56,12 @@ D_k 값이 작다면 두 attention mechanism은 비슷한 성능을 보이지만
 
 **Positional Encoding**
 
-Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 sequence token들의 절대적이나 상대적인 순서를 고려할 수 있도록 해줘야 한다. 이것을 transformer에서는 encoder와 decoder의 input embedding에 _positional encodings_ 를 더해주는 것을 통하여 고려해 주었다. Positional embedding은 d_model dimension 으로 embedding 과 vector의 크기가 같아 합쳐줄 수 있다. Positional embedding에는 학습하거나 고정할 수 있는 다양한 선택지가 존재한다.
+Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 sequence token들의 절대적이나 상대적인 순서를 고려할 수 있도록 해줘야 한다. 이것을 transformer에서는 encoder와 decoder의 input embedding에 _positional encodings_ 를 더해주는 것을 통하여 고려해 주었다. Positional encoding 은 d_model dimension 으로 embedding 과 vector의 크기가 같아 합쳐줄 수 있다. Positional embedding에는 학습하거나 고정할 수 있는 다양한 선택지가 존재한다.
 
 논문에서는 sine cosine함수를 사용한 positional embedding을 사용하였다.
+
+지금까지 살펴본 Attention Layer의 성질을 가지고 Transformer가 작동하는 과정을 살펴보자. 먼저 Encoder의 경우부터 아래의 그림에서 살펴보자.(잘못되었을 가능성 있음)
+
 
 
 
