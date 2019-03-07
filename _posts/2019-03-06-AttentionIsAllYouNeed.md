@@ -76,7 +76,11 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 ### Decoder
 
-이제 Encoder의 output을 Decoder의 input으로 하여 출력값을 얻어내는 과정에 대하여 
+이제 Encoder의 output을 Decoder의 additional input으로 하여 출력값을 얻어내는 과정에 대하여 살펴보도록하자.
+
+<img src="/images/Decoder.png" />
+
+먼저 Decoder는 output sequence를 순차적으로 생성해낸다.
 
 
 
