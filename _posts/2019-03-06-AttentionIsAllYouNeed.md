@@ -17,7 +17,7 @@ Attention mechanism 들은 input과 output sequence에서 그들의 거리와 �
 
 이 논문에서는 recurrence를 사용하지 않고, input과 output 사이의 global dependencies를 뽑아내기 위한 attention mechanism 에만 의존하는 model 구조인 **Transformer**를 제안한다.
 
-<blockquote> aaa <\blockquote>
+<blockquote> aaa </blockquote>
 
 ## Background
 
