@@ -39,6 +39,11 @@ Transformer는 sequence-aligned RNN과 convolution을 사용하지 않고, input
 **Scaled Dot-Product Attention**
 <img src="/images/scaled dot product attention.png" />
 
+Scaled dot-product attention의 input 은 dimension d_k 인 query Q와 key K, 그리고 dimension d_v인 value V로 구성된다. 여기서 query와 모든 key의 dot product를 계산하고, 이것을 d_K^(1/2)로 나눈 뒤, value들의 weight를 구하기 위해 softmax function을 취해준다. 
+
+가장 많이 쓰이는 attention function은 additive attention과 dot-product attention이다. 이 논문에서 쓰인 attention은 scaling factor만 제외하면 dot-product attention과 같다. Additive function은 하나의 hidden layer를 가진 feed-forward network를 사용한다. 두개의 complexity는 비슷하지만, dot-product attention이 훨씬 빠르고 space-efficient하다.
+
+D_k 값이 작다면 두 attention mechanism은 비슷한 성능을 보이지만, d_k가 커진다면 additive attention이 outperform 한다. 그래서 scaling factor를 통해 성능을 좋게 한 것이다. 
 
 
 
