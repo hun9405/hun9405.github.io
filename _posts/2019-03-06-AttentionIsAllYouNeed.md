@@ -46,6 +46,19 @@ Scaled dot-product attention의 input 은 dimension d_k 인 query Q와 key K, �
 D_k 값이 작다면 두 attention mechanism은 비슷한 성능을 보이지만, d_k가 커진다면 additive attention이 outperform 한다. 그래서 scaling factor를 통해 성능을 좋게 한 것이다. 
 
 
+**Multi-Head Attention**
+
+하나의 attention function을 d_model dimensional keys, values, queries에 적용하는 것 대신에, 이 논문에서는 query, key, value들을 서로 다르게 h번 linearly project 시켜 d_k, d_k, d_v dimension의 linear projection을 학습시켰다. 다음으로 query, key, value에 대한 각각의 projected version에 대하여, d_v dimensional output value를 얻기 위해 attention function을 parallel 하게 적용시켰다. 이 vector들은 모여서 concatenate되고, 그 후 linear 하게 projected 되어 마지막 output value를 생성하게 된다.
+
+이 모델에서는 h= 8 개의 parallel한 attention layer를 사용하였고, 각각의 dimension 은 d_k = d_v = d_model / h = 64 로 설정하였다. Head의 줄어든 dimension으로 인해, total computation cost는 single-head attention 을 full dimensionality 사용했을 때와 비슷하게 된다.
+
+<img src="/images/scaled dot product attention.png" />
+
+**Applications of Attention in Transformer**
+
+Transformer에서는 multi-head attention을 세가지 방법으로 사용하고 있다.
+
+* 
 
 
 
