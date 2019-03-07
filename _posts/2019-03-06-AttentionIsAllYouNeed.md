@@ -37,7 +37,7 @@ Transformer는 sequence-aligned RNN과 convolution을 사용하지 않고, input
 이제 model 구조를 좀 더 세밀하게 살펴보도록하자. 먼저 Attention Layer에 대하여 알아보자. 이 model의 attention function은 query와 key, value가 주어졌을 때, 이것을 output으로 mapping하는 함수이다. 이때 output은 value들의 weighted sum으로 표현되고, 이 weight는 query와 key의 연관성을 통해 계산된다. 아래에서 좀 더 자세하게 알아보도록 하자.
 
 **Scaled Dot-Product Attention**
-
+![_config.yml]({{ site.baseurl }}/images/scaled dot product attention.png)
 
 
 
