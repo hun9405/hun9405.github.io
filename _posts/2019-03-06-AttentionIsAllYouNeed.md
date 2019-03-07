@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Attention Is All You Need review
 ---
 
