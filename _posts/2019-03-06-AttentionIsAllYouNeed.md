@@ -80,7 +80,7 @@ Transformer 모델에서는 recurrence나 convolution이 없어, 모델이 seque
 
 <img src="/images/decoder.png" />
 
-먼저 Decoder는 output sequence를 순차적으로 생성해낸다.
+Decoder는 자신이 생성한 output을 다시 input으로 넣어 다음 output을 생성하는 것을 반복하면서 동작하게 된다.
 
 
 
